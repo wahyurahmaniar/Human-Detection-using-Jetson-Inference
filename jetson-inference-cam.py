@@ -53,17 +53,18 @@ while ret:
 	img = cv2.cvtColor(img, cv2.COLOR_RGBA2RGB).astype(np.uint8) #back to OpenCV-format (BGR with 8-bit ints)
 	img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
-    #For some object only, such as human detection
     #Human class id = 1
-    #For pednet and multiped no need this
-
+    #--------------------------------------------------
 	for i in range(len(detections)):
-		if detections[i].ClassID == 1:
+		#command this if you want to detect all objects 
+		if detections[i].ClassID == 1: #For pednet and multiped, you can command this part
+			#to get top-left of x,y location
 			startX = int(detections[i].Left)
 			startY = int(detections[i].Top)
+			#to get bottom-right of x,y location
 			endX = int(detections[i].Right)
 			endY = int(detections[i].Bottom)
-
+    #----------------------------------------------------
     
 	fcount += 1
 
