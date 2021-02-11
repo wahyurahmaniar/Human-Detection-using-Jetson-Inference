@@ -5,10 +5,17 @@ For human detection, we can use some models such as pednet, multiped, SSD Mobile
 
 
 # Installation
+Install some requirements
+```bash
+$ sudo apt-get install python3-pip
+$ sudo apt-get install libboost-all-dev
+$ sudo apt-get install git cmake libpython3-dev python3-numpy
+$ sudo apt-get install build-essential python-dev python-setuptools libboost-python-dev libboost-thread-dev
+```
+
 Install Jetson Inference
 ```bash
 $ sudo apt-get update
-$ sudo apt-get install git cmake libpython3-dev python3-numpy
 $ git clone --recursive https://github.com/dusty-nv/jetson-inference
 $ cd jetson-inference
 $ mkdir build
