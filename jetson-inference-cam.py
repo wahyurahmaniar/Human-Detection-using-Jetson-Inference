@@ -11,7 +11,7 @@ import numpy as np
 import time
 
 
-# load the object detection network
+#load the object detection network
 net = jetson.inference.detectNet("ssd-mobilenet-v2", threshold = 0.5)
 #Change object detection: pednet, multiped, ssd-mobilenet-v1, ssd-mobilenet-v2, ssd-inception-v2
 
@@ -56,8 +56,8 @@ while ret:
     #Human class id = 1
     #--------------------------------------------------
 	for i in range(len(detections)):
-		#command this if you want to detect all objects 
-		if detections[i].ClassID == 1: #For pednet and multiped, you can command this part
+		#commment this if you want to detect all objects 
+		if detections[i].ClassID == 1: #For pednet and multiped, you can comment this part
 			#to get top-left of x,y location
 			startX = int(detections[i].Left)
 			startY = int(detections[i].Top)
