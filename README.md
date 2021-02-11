@@ -26,4 +26,5 @@ More about Jetson Inference: https://github.com/dusty-nv/jetson-inference
 
 # Human Detection Comparison Results
 Real-Time Human Detection Using Deep Learning on Embedded Platforms: A Review
+
 https://journal.umy.ac.id/index.php/jrc/article/view/10558
