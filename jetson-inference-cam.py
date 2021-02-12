@@ -78,4 +78,4 @@ while ret:
 	#cv2.imwrite('img_' + str(fcount) + '.jpg', img)
 
 	if cv2.waitKey(1) & 0xFF == ord('c'):
-            break
+        	break
