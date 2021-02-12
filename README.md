@@ -1,7 +1,7 @@
 # Human-Detection-using-Jetson-Inference
 Jetson inference is realtime DNN vision library for NVIDIA Jetson Nano/TX1/TX2/Xavier NX/AGX Xavier.
 
-For human detection, we can use some models such as pednet, multiped, SSD MobileNet-V1, SSD MobileNet-V1, and SSD Inception-V2.
+For human detection, we can use some models such as pednet, multiped, SSD MobileNet-V1, SSD MobileNet-V2, and SSD Inception-V2.
 
 
 # Installation
