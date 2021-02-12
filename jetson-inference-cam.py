@@ -15,6 +15,7 @@ import time
 net = jetson.inference.detectNet("ssd-mobilenet-v2", threshold = 0.5)
 #Change object detection: pednet, multiped, ssd-mobilenet-v1, ssd-mobilenet-v2, ssd-inception-v2
 
+#change width and height
 def gstreamer_pipeline (capture_width=320, capture_height=240, display_width=320, display_height=240, framerate=30, flip_method=0):   
     return ('nvarguscamerasrc ! ' 
     'video/x-raw(memory:NVMM), '
@@ -25,7 +26,7 @@ def gstreamer_pipeline (capture_width=320, capture_height=240, display_width=320
     'videoconvert ! '
     'video/x-raw, format=(string)BGR ! appsink'  %(capture_width,capture_height,framerate,flip_method,display_width,display_height))
 
-#If the images are from files
+#If the images are from files or video
 #cap = cv2.VideoCapture('./img (%d).bmp')
 
 cap = cv2.VideoCapture(0) #usb cam
@@ -57,7 +58,7 @@ while ret:
     #--------------------------------------------------
 	for i in range(len(detections)):
 		#commment this if you want to detect all objects 
-		if detections[i].ClassID == 1: #For pednet and multiped, you can comment this part
+		if detections[i].ClassID == 1: #For pednet you can comment this part
 			#to get top-left of x,y location
 			startX = int(detections[i].Left)
 			startY = int(detections[i].Top)
@@ -77,4 +78,4 @@ while ret:
 	#cv2.imwrite('img_' + str(fcount) + '.jpg', img)
 
 	if cv2.waitKey(1) & 0xFF == ord('c'):
-        break
+            break
